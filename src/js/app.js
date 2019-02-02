@@ -6,7 +6,7 @@
 
         var title = document.getElementsByClassName('title');
         var newTitle = document.createElement('h2');
-        var titleName = document.createTextNode('Array of Objects');
+        var titleName = document.createTextNode('Car Management');
 
         newTitle.appendChild(titleName);
         title[0].appendChild(newTitle);
@@ -106,6 +106,21 @@
             var newTextNode1 = document.createTextNode(cars.CAR_MODEL);
             var newTextNode2 = document.createTextNode(cars.CAR_YEAR);
 
+            var checkbox = document.createElement('input');
+            checkbox.setAttribute('id', 'checkmark');
+            checkbox.type = "checkbox";
+            checkbox.value = 0;
+            checkbox.name = "availableCars[]";
+
+            var checkbox2 = document.createElement('input');
+            checkbox2.setAttribute('id', 'checkmark');
+            checkbox2.type = "checkbox";
+            checkbox2.value = 1;
+            checkbox2.name = "tripCars[]";
+
+            var available = document.createTextNode('Available');
+            var sale = document.createTextNode('For Sale');
+
             // spans.appendChild(newName);
             // newElement.appendChild(spans);
             // show.appendChild(newElement);
@@ -135,7 +150,15 @@
             newElement2.appendChild(spans7);
             show.appendChild(newElement2);
 
-            body.appendChild(show);
+            newElement2.appendChild(checkbox);
+            newElement2.appendChild(available);
+            show.appendChild(newElement2);
+
+            newElement2.appendChild(checkbox2);
+            newElement2.appendChild(sale);
+            show.appendChild(newElement2);
+
+            // body.appendChild(show);
 
             editButton.addEventListener("click", function () {
                 console.log(index);
